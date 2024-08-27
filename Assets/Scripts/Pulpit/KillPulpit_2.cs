@@ -31,6 +31,7 @@ public class KillPulpit_2 : MonoBehaviour
         if (target.GetComponent<KillPulpit_2>().rand <= 0)
         {
             target.GetComponent<Renderer>().enabled = false;
+            target.GetComponent<ChangeLocation>().placed = false;
         }
         
     }

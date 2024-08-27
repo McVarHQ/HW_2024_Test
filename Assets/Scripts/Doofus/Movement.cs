@@ -8,12 +8,12 @@ public class Movement : MonoBehaviour
 {
     public TextAsset doofus_diary;
 
-    private bool isMoving = false;
-    private float speed;
+    public bool isMoving = false;
+    public float speed;
 
     void Start()
     {
-        speed = 3;
+        speed = 3*3;
         Debug.Log(speed);
     }
 

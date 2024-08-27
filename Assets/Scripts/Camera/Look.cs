@@ -5,14 +5,13 @@ using UnityEngine;
 public class Look : MonoBehaviour
 {
     public Transform target;
-    private float moveX, moveY;
+    private float speed;
 
     void Update()
     {
-        moveX = Input.GetAxis("Horizontal");
-        moveY = Input.GetAxis("Vertical")*0.5f;
+        if (target.GetComponent<NoPulpitDetection>().isOut) return;
 
-        transform.Translate(new Vector3(moveX, moveY, moveY) * Time.deltaTime);
+        transform.position = new Vector3(target.position.x, target.position.y + 8.25f, target.position.z - 9);
 
     }
 }
