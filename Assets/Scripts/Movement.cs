@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
     public TextAsset doofus_diary;
+
     private bool isMoving = false;
     private float speed;
 
@@ -18,6 +20,7 @@ public class Movement : MonoBehaviour
     void Update()
     {
         if (isMoving) return;
+
 
         if (Input.GetKey(KeyCode.W)) helper(Vector3.forward);
         else if (Input.GetKey(KeyCode.A)) helper(Vector3.left);
