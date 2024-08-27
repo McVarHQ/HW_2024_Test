@@ -1,0 +1,4 @@
+repository "DoofusAdventure@McVar@cloud"
+  path "/"
+    br "/main"
+    co "/main"
