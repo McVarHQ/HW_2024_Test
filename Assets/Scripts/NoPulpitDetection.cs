@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class NoPulpitDetection : MonoBehaviour
 {
+
+    public Rigidbody rb;
     private void OnTriggerExit(Collider other)
     {
-        Rigidbody rb = other.GetComponent<Rigidbody>();
         rb.isKinematic = false;
     }
     private void OnTriggerStay(Collider other)
     {
-        Rigidbody r = other.GetComponent<Rigidbody>();
-        r.isKinematic = true;
+        if (other.GetComponent<Renderer>().enabled) rb.isKinematic = true;
+        else rb.isKinematic = false;
+            
     }
 }
