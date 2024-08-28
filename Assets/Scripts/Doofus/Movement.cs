@@ -10,11 +10,14 @@ public class Movement : MonoBehaviour
 
     public bool isMoving = false;
     public float speed;
+    public AudioClip landSound;
+    private AudioSource source;
 
     void Start()
     {
-        speed = 3*3;
+        speed = speed*3;
         Debug.Log(speed);
+        source = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -45,6 +48,12 @@ public class Movement : MonoBehaviour
         {
             transform.RotateAround(pivot, axis, speed);
             yield return new WaitForSeconds(0.01f);
+        }
+
+        if (!transform.GetComponent<NoPulpitDetection>().isOut)
+        {
+            source.clip = landSound;
+            source.Play();
         }
 
         isMoving = false;
