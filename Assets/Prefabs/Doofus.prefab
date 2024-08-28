@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4034876738398197737}
   - component: {fileID: 2080370867431203873}
   - component: {fileID: 6623073835048550212}
+  - component: {fileID: 2272214119821936603}
   m_Layer: 0
   m_Name: Doofus
   m_TagString: Player
@@ -164,3 +165,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 4034876738398197737}
   isOut: 0
+--- !u!114 &2272214119821936603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5230383116623198869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55de70c4e68d097419e85103e3830493, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: -1

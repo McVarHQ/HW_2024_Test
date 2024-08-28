@@ -24,6 +24,7 @@ public class KillPulpit_2 : MonoBehaviour
             if (target.GetComponent<Renderer>().enabled == false)
             {
                 target.GetComponent<KillPulpit_2>().rand = Random.Range(y, z);
+                target.GetComponent<ScoreTracker>().flag = false;
                 target.GetComponent<Renderer>().enabled = true;
             }
         }

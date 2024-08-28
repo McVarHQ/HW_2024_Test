@@ -139,8 +139,8 @@ GameObject:
   - component: {fileID: 85308558}
   - component: {fileID: 85308557}
   m_Layer: 5
-  m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_Name: scoreText
+  m_TagString: Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10 Pulpits
+  m_text: 10 Pulpits Invaded
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -375,7 +375,7 @@ GameObject:
   - component: {fileID: 748874878}
   m_Layer: 5
   m_Name: RestartButton
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -464,7 +464,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 748874880}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1160209781}
+        m_TargetAssemblyTypeName: GameOverScreen, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &748874880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -515,6 +527,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -609,6 +622,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 38645984}
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bb9d6d0de9225141866995d03e2b074, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 38645984}
+  gameOverScreen: {fileID: 1160209781}
+  score: 0
 --- !u!1 &981089539
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,6 +721,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2014394807710447486, guid: a4a88e4664348314da31a696f0858653, type: 3}
+      propertyPath: Controller
+      value: 
+      objectReference: {fileID: 963194228}
     - target: {fileID: 4636008538342817213, guid: a4a88e4664348314da31a696f0858653, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -890,6 +922,7 @@ GameObject:
   - component: {fileID: 1160209778}
   - component: {fileID: 1160209780}
   - component: {fileID: 1160209779}
+  - component: {fileID: 1160209781}
   m_Layer: 5
   m_Name: GameOverBG
   m_TagString: UI
@@ -957,6 +990,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1160209777}
   m_CullTransparentMesh: 1
+--- !u!114 &1160209781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160209777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e696d0f7a4c6a148b7c7f3c7258f9b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 85308557}
 --- !u!1 &1432546279
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,8 +1117,8 @@ GameObject:
   - component: {fileID: 1781630579}
   - component: {fileID: 1781630578}
   m_Layer: 5
-  m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_Name: restartText
+  m_TagString: Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1210,8 +1256,8 @@ GameObject:
   - component: {fileID: 1803365101}
   - component: {fileID: 1803365100}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
-  m_TagString: Untagged
+  m_Name: gameOverText
+  m_TagString: Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1344,6 +1390,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 213176247}
+    - target: {fileID: 2014394807710447486, guid: a4a88e4664348314da31a696f0858653, type: 3}
+      propertyPath: Controller
+      value: 
+      objectReference: {fileID: 963194228}
     - target: {fileID: 4636008538342817213, guid: a4a88e4664348314da31a696f0858653, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1449,7 +1499,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Doofus
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2272214119821936603, guid: 81e8a0f0dec972b4298df31bdee8df28, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

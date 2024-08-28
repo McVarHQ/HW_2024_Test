@@ -9,7 +9,7 @@ public class Look : MonoBehaviour
 
     void Update()
     {
-        if (target.GetComponent<NoPulpitDetection>().isOut) return;
+        //if (target.GetComponent<NoPulpitDetection>().isOut) return;
 
         transform.position = new Vector3(target.position.x, target.position.y + 8.25f, target.position.z - 9);
 

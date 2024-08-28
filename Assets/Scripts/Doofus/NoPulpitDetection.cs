@@ -10,6 +10,8 @@ public class NoPulpitDetection : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         rb.isKinematic = false;
+        StartCoroutine(waittime());
+
     }
     private void OnTriggerStay(Collider other)
     {
@@ -19,5 +21,12 @@ public class NoPulpitDetection : MonoBehaviour
             isOut = true;
             rb.isKinematic = false;
         }
+    }
+
+    IEnumerator waittime()
+    {
+        yield return new WaitForSeconds(1);
+
+        if(rb.isKinematic == false) isOut = true;
     }
 }
