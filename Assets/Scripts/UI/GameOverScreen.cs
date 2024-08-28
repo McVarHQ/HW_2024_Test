@@ -9,9 +9,11 @@ public class GameOverScreen : MonoBehaviour
 {
 
     public TextMeshProUGUI scoreText;
+    public GameObject currScore;
 
     public void Setup(int score)
     {
+        currScore.SetActive(false);
         gameObject.SetActive(true);
         scoreText.text = score.ToString() + " Pulpits Invaded";
     }
