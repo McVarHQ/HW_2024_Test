@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public TextAsset doofus_diary;
-
     public bool isMoving = false;
     public float speed;
     public AudioClip landSound;
@@ -15,15 +13,13 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
-        speed = speed*3;
-        Debug.Log(speed);
+        speed = 3 * transform.GetComponent<DiaryReader>().info.player_data.speed;
         source = GetComponent<AudioSource>();
     }
 
     void Update()
     {
         if (isMoving) return;
-
 
         if (Input.GetKey(KeyCode.W)) helper(Vector3.forward);
         else if (Input.GetKey(KeyCode.A)) helper(Vector3.left);

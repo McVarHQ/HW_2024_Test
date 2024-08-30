@@ -5,13 +5,19 @@ using UnityEngine;
 public class KillPulpit_2 : MonoBehaviour
 {
     public Transform target;
-    public float x = 2.5f, y = 4, z = 5;
+
+    public float x, y, z;
     public float rand;
 
-    void OnEnable()
+    void Start()
     {
+        var pulpdata = transform.GetComponent<DiaryReader>().info.pulpit_data;
+
+        x = pulpdata.pulpit_spawn_time;
+        y = pulpdata.min_pulpit_destroy_time;
+        z = pulpdata.max_pulpit_destroy_time;
+
         rand = Random.Range(y, z);
-        Debug.Log(rand);
     }
 
     // Update is called once per frame

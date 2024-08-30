@@ -253,6 +253,7 @@ GameObject:
   - component: {fileID: 222473198986553670}
   - component: {fileID: 2014394807710447486}
   - component: {fileID: 1238959033982385314}
+  - component: {fileID: 7500027611112732303}
   m_Layer: 0
   m_Name: Pulpit
   m_TagString: Finish
@@ -436,6 +437,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bg: {fileID: 7853011633023171871}
   text: {fileID: 7674901278763195310}
+--- !u!114 &7500027611112732303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6314166950112874415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7cc1c16ae43f4428476d69040914a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jsonFile: {fileID: 0}
+  info:
+    player_data:
+      speed: 0
+    pulpit_data:
+      min_pulpit_destroy_time: 0
+      max_pulpit_destroy_time: 0
+      pulpit_spawn_time: 0
 --- !u!1 &7853011633023171871
 GameObject:
   m_ObjectHideFlags: 0
